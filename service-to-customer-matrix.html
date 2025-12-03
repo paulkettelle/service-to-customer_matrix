@@ -1,0 +1,637 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #870581}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #870581; min-height: 16.0px}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE html&gt;</p>
+<p class="p1">&lt;html lang="en"&gt;</p>
+<p class="p1">&lt;head&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;title&gt;Service-to-Customer Matrix - Branch&lt;/title&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1" /&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;style&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>:root {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--bg: #f5f5f7;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--card: #ffffff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--border: #d0d4dc;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent: #001774;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--accent-soft: #e3e7fb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-main: #1f2933;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>--text-soft: #6b7280;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>* {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-sizing: border-box;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--bg);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-main);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.app-shell {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-width: 1200px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 auto;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>h1 {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0 0 0.25rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.subtitle {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.card {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.9rem 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #e4e5f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.instructions p {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0.25rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-soft);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.step-list {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding-left: 1.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0.5rem 0 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.step-list li {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin: 0.15rem 0;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toolbar {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>justify-content: space-between;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toolbar-left,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>.toolbar-right {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>flex-wrap: wrap;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.4rem 0.9rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-weight: 500;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: inline-flex;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>align-items: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button.secondary {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fff;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--accent-soft);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button.danger {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: #fecaca;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fee2e2;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #b91c1c;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>button:disabled {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>opacity: 0.5;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: default;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.tag {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.15rem 0.6rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--accent-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.persona-config {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: grid;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>grid-template-columns: repeat(5, minmax(0, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>gap: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.persona-config label {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.7rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.04em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>display: block;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-bottom: 0.2rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.persona-config input {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.35rem 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid var(--border);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.persona-config input:focus {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--accent);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>box-shadow: 0 0 0 1px var(--accent-soft);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.matrix-wrapper {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>overflow-x: auto;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 12px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid #e4e5f0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: var(--card);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>table {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-collapse: collapse;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.85rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>thead {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>th, td {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-bottom: 1px solid #e5e7eb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.35rem 0.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: left;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: top;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 110px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>th {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-transform: uppercase;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>letter-spacing: 0.05em;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>position: sticky;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>top: 0;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>z-index: 1;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>th.persona-col {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 90px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td.persona-cell {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>vertical-align: middle;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td.persona-cell input[type="checkbox"] {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>height: 16px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td input[type="text"],</p>
+<p class="p1"><span class="Apple-converted-space">    </span>td textarea {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>width: 100%;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 6px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: 1px solid transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.25rem 0.3rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.8rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-family: inherit;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>resize: vertical;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td textarea {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-height: 36px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>max-height: 120px;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td input[type="text"]:focus,</p>
+<p class="p1"><span class="Apple-converted-space">    </span>td textarea:focus {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>outline: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-color: var(--accent-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f9fafb;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>tr:nth-child(even) td {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fcfcff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>tr:hover td {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #f3f4ff;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>td.row-actions {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>min-width: 40px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>text-align: center;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-remove-btn {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border-radius: 999px;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>border: none;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: transparent;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>cursor: pointer;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #9ca3af;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 1rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>padding: 0.1rem 0.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.row-remove-btn:hover {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: #b91c1c;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>background: #fee2e2;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>.meta-note {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>font-size: 0.75rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>color: var(--text-soft);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>margin-top: 0.4rem;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>@media (max-width: 768px) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>body {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>padding: 0.5rem;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.persona-config {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>grid-template-columns: repeat(2, minmax(0, 1fr));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>.toolbar {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>align-items: flex-start;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/style&gt;</p>
+<p class="p1">&lt;/head&gt;</p>
+<p class="p1">&lt;body&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;div class="app-shell"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;header style="margin-bottom: 0.75rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;h1&gt;Service-to-Customer Matrix Tool&lt;/h1&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;p class="subtitle"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>Match your &lt;strong&gt;services&lt;/strong&gt; to your &lt;strong&gt;personas&lt;/strong&gt; so you can prioritize messaging, offers, and campaigns.</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/header&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Instructions --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card instructions"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div style="display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;flex-wrap:wrap;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p&gt;&lt;strong&gt;How to use this tool:&lt;/strong&gt;&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;ol class="step-list"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;strong&gt;Fill in your primary service groups&lt;/strong&gt; (e.g., “New Construction Services”).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;strong&gt;Add secondary service groups&lt;/strong&gt; under each main group (e.g., “Consulting,” “Field Verification”).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;strong&gt;Write a brief description&lt;/strong&gt; for each service (2–3 sentences max).&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;li&gt;&lt;strong&gt;For each persona&lt;/strong&gt;, tick the box if they typically use that service.&lt;/li&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/ol&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="meta-note"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Your work is saved automatically in this browser (localStorage). Clear data anytime using the toolbar.</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div style="min-width:260px;max-width:360px;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;span class="tag"&gt;Persona Setup&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;p class="meta-note" style="margin-top:0.35rem;"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>Rename personas below to match your ICPs (e.g., “Owner,” “Facility Manager,” “Marketing Director”).</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/p&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;div class="persona-config" id="persona-config"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Persona fields will be inserted here by JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;!-- Toolbar --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;section class="card"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="toolbar"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="toolbar-left"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="add-row-btn" type="button"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;＋&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;span&gt;Add service row&lt;/span&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="download-csv-btn" class="secondary" type="button"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>⬇ Export CSV</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;div class="toolbar-right"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;button id="clear-all-btn" class="danger" type="button"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>🗑 Clear all data</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/button&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;!-- Matrix Table --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;div class="matrix-wrapper"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;table id="matrix-table"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;th style="min-width: 160px;"&gt;Main Service Group&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;th style="min-width: 160px;"&gt;Secondary Service Group&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;th style="min-width: 180px;"&gt;Service&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;th style="min-width: 220px;"&gt;Description&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;!-- Persona headers inserted by JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">              </span>&lt;th class="row-actions"&gt;&lt;/th&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;/tr&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/thead&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;tbody id="matrix-body"&gt;</p>
+<p class="p1"><span class="Apple-converted-space">            </span>&lt;!-- Rows inserted by JS --&gt;</p>
+<p class="p1"><span class="Apple-converted-space">          </span>&lt;/tbody&gt;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>&lt;/table&gt;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>&lt;/div&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>&lt;/section&gt;</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/div&gt;</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;script&gt;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const LOCAL_STORAGE_KEY = 'branch_service_customer_matrix_v1';</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const DEFAULT_PERSONAS = ['Persona 1', 'Persona 2', 'Persona 3', 'Persona 4', 'Persona 5'];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>let personas = [...DEFAULT_PERSONAS];</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>const personaConfigEl = document.getElementById('persona-config');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const matrixTable = document.getElementById('matrix-table');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const matrixBody = document.getElementById('matrix-body');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const addRowBtn = document.getElementById('add-row-btn');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const clearAllBtn = document.getElementById('clear-all-btn');</p>
+<p class="p1"><span class="Apple-converted-space">    </span>const downloadCsvBtn = document.getElementById('download-csv-btn');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>init();</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function init() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>loadFromStorage();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderPersonaInputs();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderPersonaHeaders();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (matrixBody.children.length === 0) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>addRow();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>attachGlobalListeners();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function loadFromStorage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const raw = localStorage.getItem(LOCAL_STORAGE_KEY);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!raw) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const parsed = JSON.parse(raw);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (Array.isArray(parsed.personas)) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>personas = parsed.personas;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (Array.isArray(parsed.rows)) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>parsed.rows.forEach(row =&gt; addRow(row));</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.warn('Error loading matrix from storage:', err);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function saveToStorage() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rows = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const trs = matrixBody.querySelectorAll('tr');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>trs.forEach(tr =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mainGroup = tr.querySelector('input[data-field="mainGroup"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const secondaryGroup = tr.querySelector('input[data-field="secondaryGroup"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const service = tr.querySelector('input[data-field="service"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const description = tr.querySelector('textarea[data-field="description"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const personaFlags = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.querySelectorAll('td.persona-cell input[type="checkbox"]').forEach(cb =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>personaFlags.push(!!cb.checked);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rows.push({</p>
+<p class="p1"><span class="Apple-converted-space">          </span>mainGroup,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>secondaryGroup,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>service,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>description,</p>
+<p class="p1"><span class="Apple-converted-space">          </span>personas: personaFlags</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const payload = { personas, rows };</p>
+<p class="p1"><span class="Apple-converted-space">      </span>try {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(payload));</p>
+<p class="p1"><span class="Apple-converted-space">      </span>} catch (err) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>console.warn('Error saving matrix to storage:', err);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderPersonaInputs() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>personaConfigEl.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>personas.forEach((name, idx) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const wrapper = document.createElement('div');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const label = document.createElement('label');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>label.textContent = `Persona ${idx + 1}`;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const input = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.type = 'text';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.value = name;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.dataset.index = String(idx);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>input.addEventListener('input', onPersonaNameChange);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>wrapper.appendChild(label);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>wrapper.appendChild(input);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>personaConfigEl.appendChild(wrapper);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function onPersonaNameChange(e) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const idx = Number(e.target.dataset.index);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>personas[idx] = e.target.value || DEFAULT_PERSONAS[idx];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>renderPersonaHeaders();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>saveToStorage();</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function renderPersonaHeaders() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const theadRow = matrixTable.querySelector('thead tr');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>while (theadRow.children.length &gt; 5) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>theadRow.removeChild(theadRow.children[theadRow.children.length - 2]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>personas.forEach((name, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const th = document.createElement('th');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th.className = 'persona-col';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>th.textContent = name || DEFAULT_PERSONAS[i];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>theadRow.insertBefore(th, theadRow.lastElementChild);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const trs = matrixBody.querySelectorAll('tr');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>trs.forEach(tr =&gt; normalizePersonaCells(tr));</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function addRow(data) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tr = document.createElement('tr');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tdMain = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const inputMain = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputMain.type = 'text';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputMain.placeholder = 'e.g., New Construction Services';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputMain.dataset.field = 'mainGroup';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (data &amp;&amp; data.mainGroup) inputMain.value = data.mainGroup;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdMain.appendChild(inputMain);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tdSecondary = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const inputSecondary = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputSecondary.type = 'text';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputSecondary.placeholder = 'e.g., Consulting';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputSecondary.dataset.field = 'secondaryGroup';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (data &amp;&amp; data.secondaryGroup) inputSecondary.value = data.secondaryGroup;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdSecondary.appendChild(inputSecondary);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tdService = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const inputService = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputService.type = 'text';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputService.placeholder = 'Specific service';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>inputService.dataset.field = 'service';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (data &amp;&amp; data.service) inputService.value = data.service;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdService.appendChild(inputService);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tdDescription = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const textareaDesc = document.createElement('textarea');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>textareaDesc.placeholder = '2–3 sentence high-level description.';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>textareaDesc.dataset.field = 'description';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (data &amp;&amp; data.description) textareaDesc.value = data.description;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdDescription.appendChild(textareaDesc);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.appendChild(tdMain);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.appendChild(tdSecondary);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.appendChild(tdService);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.appendChild(tdDescription);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>personas.forEach((_, i) =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const tdPersona = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tdPersona.className = 'persona-cell';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const cb = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cb.type = 'checkbox';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (data &amp;&amp; Array.isArray(data.personas) &amp;&amp; data.personas[i]) {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>cb.checked = true;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>}</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tdPersona.appendChild(cb);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.appendChild(tdPersona);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const tdActions = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdActions.className = 'row-actions';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const removeBtn = document.createElement('button');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>removeBtn.type = 'button';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>removeBtn.className = 'row-remove-btn';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>removeBtn.innerHTML = '✕';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>removeBtn.title = 'Remove row';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>removeBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.remove();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saveToStorage();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tdActions.appendChild(removeBtn);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.appendChild(tdActions);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.addEventListener('input', saveToStorage);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>tr.addEventListener('change', saveToStorage);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>matrixBody.appendChild(tr);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return tr;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function normalizePersonaCells(tr) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const actionCell = tr.lastElementChild;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>while (tr.children.length &gt; 5) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.removeChild(tr.children[tr.children.length - 2]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>personas.forEach(() =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const td = document.createElement('td');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>td.className = 'persona-cell';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const cb = document.createElement('input');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>cb.type = 'checkbox';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>td.appendChild(cb);</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.insertBefore(td, actionCell);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function attachGlobalListeners() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>addRowBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>addRow();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>saveToStorage();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>clearAllBtn.addEventListener('click', () =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const ok = confirm('Clear all matrix data from this browser? This cannot be undone.');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>if (!ok) return;</p>
+<p class="p1"><span class="Apple-converted-space">        </span>matrixBody.innerHTML = '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>personas = [...DEFAULT_PERSONAS];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderPersonaInputs();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>renderPersonaHeaders();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>addRow();</p>
+<p class="p1"><span class="Apple-converted-space">        </span>localStorage.removeItem(LOCAL_STORAGE_KEY);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>downloadCsvBtn.addEventListener('click', downloadAsCsv);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function downloadAsCsv() {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const rows = [];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const header = [</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'Main Service Group',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'Secondary Service Group',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'Service',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>'Description',</p>
+<p class="p1"><span class="Apple-converted-space">        </span>...personas</p>
+<p class="p1"><span class="Apple-converted-space">      </span>];</p>
+<p class="p1"><span class="Apple-converted-space">      </span>rows.push(header);</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const trs = matrixBody.querySelectorAll('tr');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>trs.forEach(tr =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const mainGroup = tr.querySelector('input[data-field="mainGroup"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const secondaryGroup = tr.querySelector('input[data-field="secondaryGroup"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const service = tr.querySelector('input[data-field="service"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const description = tr.querySelector('textarea[data-field="description"]')?.value || '';</p>
+<p class="p1"><span class="Apple-converted-space">        </span>const personaFlags = [];</p>
+<p class="p1"><span class="Apple-converted-space">        </span>tr.querySelectorAll('td.persona-cell input[type="checkbox"]').forEach(cb =&gt; {</p>
+<p class="p1"><span class="Apple-converted-space">          </span>personaFlags.push(cb.checked ? 'X' : '');</p>
+<p class="p1"><span class="Apple-converted-space">        </span>});</p>
+<p class="p1"><span class="Apple-converted-space">        </span>rows.push([mainGroup, secondaryGroup, service, description, ...personaFlags]);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>});</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const csvContent = rows</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.map(row =&gt; row.map(escapeForCsv).join(','))</p>
+<p class="p1"><span class="Apple-converted-space">        </span>.join('\r\n');</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">      </span>const blob = new Blob([csvContent], { type: 'text/csv;charset=utf-8;' });</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const url = URL.createObjectURL(blob);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const a = document.createElement('a');</p>
+<p class="p1"><span class="Apple-converted-space">      </span>a.href = url;</p>
+<p class="p1"><span class="Apple-converted-space">      </span>a.download = 'service-to-customer-matrix.csv';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.body.appendChild(a);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>a.click();</p>
+<p class="p1"><span class="Apple-converted-space">      </span>document.body.removeChild(a);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>URL.revokeObjectURL(url);</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p2"><br></p>
+<p class="p1"><span class="Apple-converted-space">    </span>function escapeForCsv(val) {</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (val == null) return '';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>const str = String(val);</p>
+<p class="p1"><span class="Apple-converted-space">      </span>if (str.includes('"') || str.includes(',') || str.includes('\n') || str.includes('\r')) {</p>
+<p class="p1"><span class="Apple-converted-space">        </span>return '"' + str.replace(/"/g, '""') + '"';</p>
+<p class="p1"><span class="Apple-converted-space">      </span>}</p>
+<p class="p1"><span class="Apple-converted-space">      </span>return str;</p>
+<p class="p1"><span class="Apple-converted-space">    </span>}</p>
+<p class="p1"><span class="Apple-converted-space">  </span>&lt;/script&gt;</p>
+<p class="p1">&lt;/body&gt;</p>
+<p class="p1">&lt;/html&gt;</p>
+</body>
+</html>
